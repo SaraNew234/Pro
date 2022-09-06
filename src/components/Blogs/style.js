@@ -22,4 +22,5 @@ export const StyledBlogContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 3vw;
+  grid-row-gap:20px ;
 `;
