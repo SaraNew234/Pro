@@ -3,7 +3,7 @@ class ArticleService {
   static articles = async () => {
     try {
       const reponse = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f548d8e311df4d718a98364ceddb3371"
+        "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4e126bbb054a4c5bad2fa29cd48bab59"
       );
 
       const data = await reponse.data;
