@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const StyledFeatures = styled.div`
-  padding: 160px 11vw;
+  padding: 40px 11vw 160px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 4vw;

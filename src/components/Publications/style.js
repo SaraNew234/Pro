@@ -26,7 +26,6 @@ export const StyledPublication = styled.div`
   height: fit-content;
   grid-row: ${({ grid }) => grid};
   background-image: url(${({ src }) => src});
-  background-color: red;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
