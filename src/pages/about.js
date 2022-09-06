@@ -7,7 +7,8 @@ import Footer from "../components/shared/Footer/index";
 import { SEO } from "../components/shared/SEO/index";
 import { Layout } from "../components/shared/Layout/index";
 import { Story } from "../components/Story";
-export default function About() {
+import ArticleService from '../services/articles.service'
+export default function About({data}) {
   return (
     <>
       <Layout>
@@ -16,9 +17,18 @@ export default function About() {
         <AboutInfo />
         <Features />
         <MissionVision />
-        <Story />
+        <Story data={data.articles}/>
         <Footer />
       </Layout>
     </>
   );
 }
+export async function getStaticProps() {
+  let datas= await ArticleService.articles()
+   return {
+     props: {
+       data:datas
+      
+     },
+   };
+ }

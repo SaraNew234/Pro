@@ -7,14 +7,11 @@ import {
   StyledArticle,
 } from "./style";
 import { Article } from "../Article/index";
-import ArticleService from "../../services/articles.service";
 import Ellipse from "../../assets/icons/ellipse.svg";
-export function Story() {
+export function Story({ data }) {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
-    ArticleService.articles().then((data) => {
-      setArticles(data?.articles);
-    });
+    setArticles(data);
   }, []);
   return (
     <StyledStory>

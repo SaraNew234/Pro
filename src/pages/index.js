@@ -8,7 +8,10 @@ import { Blog } from "../components/Blogs";
 import { HomeIntro } from "../components/HomeIntro";
 import { AboutUs } from "../components/AboutUs";
 import { Customers } from "../components/Customers/index";
-export default function Home() {
+import ArticleService from '../services/articles.service'
+export default function Home({data}) {
+  console.log(data)
+  
   return (
     <>
       <Layout>
@@ -18,10 +21,19 @@ export default function Home() {
         <AboutUs />
         <Publications />
         <Customers />
-        <Blog />
+        <Blog data={data.articles}/>
         <Logos />
         <Footer />
       </Layout>
     </>
   );
+}
+export async function getStaticProps() {
+ let datas= await ArticleService.articles()
+  return {
+    props: {
+      data:datas
+     
+    },
+  };
 }
